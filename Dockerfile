@@ -2,7 +2,7 @@ FROM nginx
 COPY files/nginx.conf /etc/nginx/nginx.conf
 COPY files/start.sh /start.sh
 
-RUN "curl -sOL -o file.tar.gz https://api.github.com/repos/steveseguin/obsninja/tarball/16.2 && tar -xvzf file.tar.gz -C /var/www/html/obs.ninja"
+RUN "curl -sOL https://api.github.com/repos/steveseguin/obsninja/tarball/16.2 && tar -xvzf 16.2 -C /var/www/html/obs.ninja"
 
 # Define mountable directories.
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
