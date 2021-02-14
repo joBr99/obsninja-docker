@@ -3,7 +3,7 @@ COPY files/nginx.conf /etc/nginx/nginx.conf
 COPY files/start.sh /start.sh
 COPY source.tar.gz /source.tar.gz
 
-RUN /bin/chmod" +x /start.sh
+RUN /bin/chmod +x /start.sh
 RUN /bin/mkdir /var/www/html/obs.ninja
 RUN /bin/tar -xvzf /source.tar.gz -C /var/www/html/obs.ninja
 RUN /bin/rm /source.tar.gz
