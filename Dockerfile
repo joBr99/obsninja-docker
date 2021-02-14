@@ -1,7 +1,7 @@
 FROM nginx
 COPY files/nginx.conf /etc/nginx/nginx.conf
 COPY files/start.sh /start.sh
-COPY files/source.tar.gz
+COPY files/source.tar.gz files/source.tar.gz
 RUN "tar -xvzf files/source.tar.gz -C /var/www/html/obs.ninja"
 
 # Define mountable directories.
