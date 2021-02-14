@@ -1,8 +1,8 @@
 FROM nginx
 COPY files/nginx.conf /etc/nginx/nginx.conf
 COPY files/start.sh /start.sh
-COPY source.tar.gz source.tar.gz
-RUN "tar -xvzf source.tar.gz -C /var/www/html/obs.ninja && rm source.tar.gz"
+COPY source.tar.gz /source.tar.gz
+RUN "apt update && apt install tar && tar -xvzf /source.tar.gz -C /var/www/html/obs.ninja && rm s/ource.tar.gz"
 
 # Define mountable directories.
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
