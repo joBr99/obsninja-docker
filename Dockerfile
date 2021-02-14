@@ -2,9 +2,9 @@ FROM nginx
 COPY files/nginx.conf /etc/nginx/nginx.conf
 COPY files/start.sh /start.sh
 COPY source.tar.gz /source.tar.gz
+RUN "ls -la"
 
 RUN "chmod +x /start.sh"
-RUN "ls -la"
 RUN "apt-get update"
 RUN "apt-get install -y tar"
 RUN "/var/www/html/obs.ninja"
